@@ -7,24 +7,23 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity
+public class SecondActivity extends AppCompatActivity
 {
 
-    private static final String TAG = "DebugMainActivity";
+    private static final String TAG = "DebugSecondActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Button button = findViewById(R.id.b_go_to_next_activity);
+        setContentView(R.layout.activity_second);
+        Button button = findViewById(R.id.b_back);
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(intent);
+               finish();
             }
         });
         Log.d(TAG, "onCreate: ");
